@@ -1,0 +1,40 @@
+Module: /home/affonso/git/cross-compiling-testing/watcom/hello.c
+GROUP: 'DGROUP' CONST,CONST2,_DATA
+
+Segment: _TEXT BYTE USE32 00000040 bytes
+0000						main_:
+0000  68 2C 00 00 00			push		0x0000002c
+0005  E8 00 00 00 00			call		__CHK
+000A  53						push		ebx
+000B  51						push		ecx
+000C  52						push		edx
+000D  56						push		esi
+000E  57						push		edi
+000F  55						push		ebp
+0010  89 E5						mov		ebp,esp
+0012  81 EC 10 00 00 00			sub		esp,0x00000010
+0018  C7 45 F4 00 00 00 00		mov		dword ptr -0xc[ebp],0x00000000
+001F  C7 45 F8 03 00 00 00		mov		dword ptr -0x8[ebp],0x00000003
+0026  8B 45 F4					mov		eax,-0xc[ebp]
+0029  03 45 F8					add		eax,-0x8[ebp]
+002C  89 45 FC					mov		-0x4[ebp],eax
+002F  C7 45 F0 00 00 00 00		mov		dword ptr -0x10[ebp],0x00000000
+0036  8B 45 F0					mov		eax,-0x10[ebp]
+0039  C9						leave
+003A  5F						pop		edi
+003B  5E						pop		esi
+003C  5A						pop		edx
+003D  59						pop		ecx
+003E  5B						pop		ebx
+003F  C3						ret
+
+Routine Size: 64 bytes,    Routine Base: _TEXT + 0000
+
+No disassembly errors
+
+Segment: CONST DWORD USE32 00000000 bytes
+
+Segment: CONST2 DWORD USE32 00000000 bytes
+
+Segment: _DATA DWORD USE32 00000000 bytes
+

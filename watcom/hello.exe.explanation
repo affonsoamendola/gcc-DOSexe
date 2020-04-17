@@ -1,0 +1,20 @@
+4D 5A - Signature
+76 00 - Number of bytes in the last page
+04 00 - Number of whole/partial pages
+00 00 - N of entries in the relocation table
+02 00 - Paragraphs taken by the header
+01 10 - The number of paragraphs required by the program, excluding the PSP and program image. If
+		no free block is big enough, the loading stops. 
+FF FF - The number of paragraphs requested by the program. If no free block is big enough, the 	
+		biggest one possible is allocated. 
+66 00 - Initial SS, Relocatable segment address for SS.
+00 00 - Initial SP
+00 00 - Checksum
+98 00 - Initial IP
+00 00 - Initial CS
+20 00 - Relocation Table
+00 00 - Overlay
+?? ?? - There might be something here if overlay is != than 00 00 but i am not sure.
+PADDING TILL 0x20.
+
+At offset 0x20 apparently begins the relocation table, which matches with the address in line 15 in this file.

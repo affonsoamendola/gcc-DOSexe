@@ -1,0 +1,1 @@
+gcc hello.c -ohello.exe -std=gnu99 -Os -nostdlib -m32 -march=i386 -ffreestanding -fno-asynchronous-unwind-tables -fno-dwarf2-cfi-asm -Wl,--nmagic,--script=com.ld
